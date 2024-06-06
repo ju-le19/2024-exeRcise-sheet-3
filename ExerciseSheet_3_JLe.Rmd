@@ -118,3 +118,32 @@ Link: [https://github.com/owid/owid-datasets/blob/master/datasets/CO2%20emission
 Research Question: What is the distribution of CO2 emissions among cities in the C40 network? Are there any significant differences in emissions levels between the cities?
 
 This questions is interesting because it allows us observe how fair they well in their cause and we might find common patterns of eg. policies, ... that caused their situation (positive and negative.
+
+### 4e)
+
+```{r}
+library(ggplot2)
+
+co2_emissions <- read.csv("data/CO2 emissions by city - C40 Cities (2018).csv")
+
+summary(co2_emissions$CO2.emissions.per.capita)
+
+ggplot(co2_emissions, aes(x = CO2.emissions.per.capita)) +
+  geom_histogram(binwidth = 5, fill = "skyblue", color = "black") +
+  labs(title = "Distribution of CO2 Emissions per Capita",
+       x = "CO2 Emissions per Capita (metric tons)",
+       y = "Frequency") +
+  theme_minimal()
+
+mean_emissions <- co2_emissions %>%
+  group_by(Entity) %>%
+  summarize(mean_co2 = mean(CO2.emissions.per.capita, na.rm = TRUE))
+
+summary(mean_emissions$mean_co2)
+```
+
+We can observe that the majority of the cities have a lower CO2 emissions per capita that somewhat model a gaussian-like distribution around the median and mean. We can see that all cities but one can be found clustered around these values.
+
+The outlier being Melbourne with 37.660 metric tons. This suggests with an exceptionally high CO2 emissions per capita we can try to understand and learn from Melbourne to find reasons why this is the case, e.g. industrial activity, infrastructure, energy consumption or unique characteristecs of the city.\
+
+So the answer to the questions is that there are indeed differences in emissions levels between cities in the C40 network.
