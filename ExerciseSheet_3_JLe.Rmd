@@ -82,3 +82,10 @@ vornamen23 <- mutate(vornamen23, year = 2023)
 str(vornamen22)
 str(vornamen23)
 ```
+
+### 3e)
+```{r}
+combined_vorname <- bind_rows(vornamen22, vornamen23)
+
+str(combined_vorname)
+```
