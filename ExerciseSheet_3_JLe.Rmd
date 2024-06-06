@@ -26,6 +26,30 @@ Weakness:
 
 ### 2a)
 
-https://github.com/ju-le19/exeRcise-sheet-3.git
+<https://github.com/ju-le19/exeRcise-sheet-3.git>
 
 ### Exercise 3: Baby-Names in Munich
+
+### 3b)
+
+```{r}
+library(dplyr)
+
+vornamen22 <- read.csv("data/open_data_portal_2022.csv")
+vornamen23 <- read.csv("data/vornamen-muenchen-2023.csv")
+
+# class(vornamen22$Anzahl) shows character
+# class(vornamen23$Anzahl) shows character
+# looking through data set you can find that all ages less than 4 are written as "4 oder weniger"
+
+vornamen22 <- vornamen22 %>%
+  mutate(Anzahl = as.numeric(gsub("[^0-9]", "", Anzahl)))
+
+vornamen23 <- vornamen23 %>%
+  mutate(Anzahl = as.numeric(gsub("[^0-9]", "", Anzahl)))
+
+head(vornamen22, 3)
+head(vornamen23, 3)
+```
+
+Because I do not have more info about "4 oder weniger", I decided for the simplest solution which was to remove any non numeric character and convert the column to numeric afterwards. Obviously the consequence of this is that now all ages that are less or equal to 4 aren't correctly represented in the dataset.
