@@ -73,3 +73,12 @@ cat("2023: ", total_babies_2023, "\n")
 ```
 
 More babies were born in the year 2022.
+
+### 3d)
+```{r}
+vornamen22 <- mutate(vornamen22, year = 2022)
+vornamen23 <- mutate(vornamen23, year = 2023)
+
+str(vornamen22)
+str(vornamen23)
+```
