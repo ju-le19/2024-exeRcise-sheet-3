@@ -21,3 +21,11 @@ Weakness:
 -   Large Files: e.g. Images, videos, ..., will slow down operations (cloning, pushing, pulling). Can be negated but have to be set up first.
 
 -   Difficult for Beginners: Very overwhelming for beginners and might be used conservatively until one is more comfortable with it.
+
+# Exercise 2: Putting your Repository on GitHub
+
+### 2a)
+
+https://github.com/ju-le19/exeRcise-sheet-3.git
+
+### Exercise 3: Baby-Names in Munich
