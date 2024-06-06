@@ -104,3 +104,11 @@ popularity <- combined_vorname %>%
 
 kable(head(popularity, 10), caption = "Top 10 Most Popular Names Across Both Years")
 ```
+
+## Exercise 4: Open Analysis
+
+### 4c)
+
+Dataset Name: CO2 emissions by city - C40 Cities (2018)
+
+Link: [https://github.com/owid/owid-datasets/blob/master/datasets/CO2%20emissions%20by%20city%20-%20C40%20Cities%20(2018)/CO2%20emissions%20by%20city%20-%20C40%20Cities%20(2018).csv](https://github.com/owid/owid-datasets/blob/master/datasets/CO2%20emissions%20by%20city%20-%20C40%20Cities%20(2018)/CO2%20emissions%20by%20city%20-%20C40%20Cities%20(2018).csv){.uri}
