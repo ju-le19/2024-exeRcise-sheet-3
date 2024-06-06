@@ -112,3 +112,9 @@ kable(head(popularity, 10), caption = "Top 10 Most Popular Names Across Both Yea
 Dataset Name: CO2 emissions by city - C40 Cities (2018)
 
 Link: [https://github.com/owid/owid-datasets/blob/master/datasets/CO2%20emissions%20by%20city%20-%20C40%20Cities%20(2018)/CO2%20emissions%20by%20city%20-%20C40%20Cities%20(2018).csv](https://github.com/owid/owid-datasets/blob/master/datasets/CO2%20emissions%20by%20city%20-%20C40%20Cities%20(2018)/CO2%20emissions%20by%20city%20-%20C40%20Cities%20(2018).csv){.uri}
+
+### 4d)
+
+Research Question: What is the distribution of CO2 emissions among cities in the C40 network? Are there any significant differences in emissions levels between the cities?
+
+This questions is interesting because it allows us observe how fair they well in their cause and we might find common patterns of eg. policies, ... that caused their situation (positive and negative.
