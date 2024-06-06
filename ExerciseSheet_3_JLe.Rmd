@@ -75,6 +75,7 @@ cat("2023: ", total_babies_2023, "\n")
 More babies were born in the year 2022.
 
 ### 3d)
+
 ```{r}
 vornamen22 <- mutate(vornamen22, year = 2022)
 vornamen23 <- mutate(vornamen23, year = 2023)
@@ -84,8 +85,20 @@ str(vornamen23)
 ```
 
 ### 3e)
+
 ```{r}
 combined_vorname <- bind_rows(vornamen22, vornamen23)
 
 str(combined_vorname)
+```
+
+### 3f)
+
+```{r}
+popularity <- combined_dataset %>%
+  group_by(Name) %>%
+  summarize(Total_Count = sum(Anzahl)) %>%
+  arrange(desc(Total_Count))
+
+kable(head(popularity, 10), caption = "Top 10 Most Popular Names Across Both Years")
 ```
