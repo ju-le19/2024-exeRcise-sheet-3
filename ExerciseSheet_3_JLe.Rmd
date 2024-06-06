@@ -14,7 +14,8 @@ Strengths:
 
 -   Decentralization: allows easy collaboration, because every developer has a copy of repository
 
--   Branching/Merging: You can create branches for independent features or bug fixes without affecting the main branch. Later on you can merge back the branches into the main.
+-   Branching/Merging: You can create branches for independent features or bug fixes without affecting the main branch.\
+    Later on you can merge back the branches into the main.
 
 Weakness:
 
@@ -52,4 +53,23 @@ head(vornamen22, 3)
 head(vornamen23, 3)
 ```
 
-Because I do not have more info about "4 oder weniger", I decided for the simplest solution which was to remove any non numeric character and convert the column to numeric afterwards. Obviously the consequence of this is that now all counts of names that are less or equal to 4 aren't correctly represented in the dataset.
+Because I do not have more info about "4 oder weniger", I decided for the simplest solution which was to remove any non numeric character and convert the column to numeric afterwards.
+
+Obviously the consequence of this is that now all counts of names that are less or equal to 4 aren't correctly represented in the dataset.
+
+### 3c)
+
+```{r}
+total_babies_2022 <- vornamen22 %>%
+  summarize(total = sum(Anzahl, na.rm = TRUE)) %>%
+  pull(total)
+
+total_babies_2023 <- vornamen23 %>%
+  summarize(total = sum(Anzahl, na.rm = TRUE)) %>%
+  pull
+
+cat("2022: ", total_babies_2022, "\n")
+cat("2023: ", total_babies_2023, "\n")
+```
+
+More babies were born in the year 2022.
