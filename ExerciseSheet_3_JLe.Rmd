@@ -95,8 +95,10 @@ str(combined_vorname)
 ### 3f)
 
 ```{r}
-popularity <- combined_dataset %>%
-  group_by(Name) %>%
+library(knitr)
+
+popularity <- combined_vorname %>%
+  group_by(Vorname) %>%
   summarize(Total_Count = sum(Anzahl)) %>%
   arrange(desc(Total_Count))
 
