@@ -142,6 +142,17 @@ mean_emissions <- co2_emissions %>%
 summary(mean_emissions$mean_co2)
 ```
 
+### 4f)
+
+```{r plot_figure, fig.cap="Scatter plot depicting the correlation between CO2 emissions per capita and population density across cities in the C40 network. Data source: CO2 emissions by city - C40 Cities (2018)."}
+ggplot(co2_emissions, aes(x = Population.density, y = CO2.emissions.per.capita)) +
+  geom_point(color = "skyblue") +
+  labs(title = "CO2 Emissions per Capita vs. Population Density",
+       x = "Population Density (persons per square kilometer)",
+       y = "CO2 Emissions per Capita (metric tons)") +
+  theme_minimal()
+```
+
 We can observe that the majority of the cities have a lower CO2 emissions per capita that somewhat model a gaussian-like distribution around the median and mean. We can see that all cities but one can be found clustered around these values.
 
 The outlier being Melbourne with 37.660 metric tons. This suggests with an exceptionally high CO2 emissions per capita we can try to understand and learn from Melbourne to find reasons why this is the case, e.g. industrial activity, infrastructure, energy consumption or unique characteristecs of the city.\
